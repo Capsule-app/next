@@ -76,6 +76,9 @@ module.exports = {
       24: "24rem",
       400: "400px",
     },
+    gridTemplateColumns: {
+      xl: "360px 744px 360px",
+    },
     extend: {},
   },
   variants: {

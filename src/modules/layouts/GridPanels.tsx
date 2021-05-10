@@ -13,9 +13,5 @@ export const FixedGridPanel: React.FC<Props> = ({ children }) => {
 };
 
 export const MiddlePanel: React.FC<Props> = ({ children }) => {
-  return (
-    <div className="flex flex-row justify-center items-stretch">
-      <div className="w-screen lg:w-full lg:max-w-main">{children}</div>
-    </div>
-  );
+  return <div className="flex flex-col flex-1 w-full">{children}</div>;
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import { Header } from "./Header";
-import { FixedGridPanel as GridPanel, MiddlePanel } from "./GridPanels";
+import { FixedGridPanel, MiddlePanel } from "./GridPanels";
 import { useScreenType } from "../../shared-hooks/useScreenType";
+import { Media } from "../../shared-hooks/useScreenSize";
 
 interface MainLayoutProps {
   tabletSidebar?: React.ReactNode;
@@ -17,18 +18,41 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
   tabletSidebar = <div />,
 }) => {
   const screenType = useScreenType();
-
   let gridTemplateColumns = "360px 744px 360px";
+
+  const content = (
+    <>
+      <Media
+        greaterThanOrEqual="xl"
+        className={`relative grid grid-cols-xl gap-5`}
+      >
+        <FixedGridPanel>{leftPanel}</FixedGridPanel>
+        <MiddlePanel>{children}</MiddlePanel>
+        <FixedGridPanel>{rightPanel}</FixedGridPanel>
+      </Media>
+      <Media at="lg">
+        <MiddlePanel>{children}</MiddlePanel>
+        <FixedGridPanel>{rightPanel}</FixedGridPanel>
+      </Media>
+      <Media at="md">
+        <p>md</p>
+      </Media>
+      <Media at="sm">
+        <p>less than bro</p>
+      </Media>
+    </>
+  );
+
   let middle = null;
-  let padding = "pt-6.5";
+  let padding = "";
 
   switch (screenType) {
     case "3-cols":
       middle = (
         <>
-          <GridPanel>{leftPanel}</GridPanel>
+          <FixedGridPanel>{leftPanel}</FixedGridPanel>
           <MiddlePanel>{children}</MiddlePanel>
-          <GridPanel>{rightPanel}</GridPanel>
+          <FixedGridPanel>{rightPanel}</FixedGridPanel>
         </>
       );
       break;
@@ -38,7 +62,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
         <>
           {tabletSidebar}
           <MiddlePanel>{children}</MiddlePanel>
-          <GridPanel>{rightPanel}</GridPanel>
+          <FixedGridPanel>{rightPanel}</FixedGridPanel>
         </>
       );
       break;
@@ -59,18 +83,5 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
       break;
   }
 
-  return (
-    <>
-      <Header />
-      <main
-        className={`w-screen flex-row flex-nowrap justify-center relative ${padding}`}
-        style={{
-          display: screenType === "fullscreen" ? "flex" : "grid",
-          gridTemplateColumns,
-        }}
-      >
-        {middle}
-      </main>
-    </>
-  );
+  return <main className="flex flex-col items-center w-full">{content}</main>;
 };

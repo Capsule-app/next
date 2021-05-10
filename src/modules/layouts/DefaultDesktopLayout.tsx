@@ -7,5 +7,9 @@ interface Props {
 }
 
 export const DefaultDesktopLayout: React.FC<Props> = ({ children }) => {
-  return <MainLayout rightPanel={<UserViewList />}>{children}</MainLayout>;
+  return (
+    <MainLayout leftPanel={<UserViewList />} rightPanel={<UserViewList />}>
+      {children}
+    </MainLayout>
+  );
 };
