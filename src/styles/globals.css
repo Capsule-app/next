@@ -1,6 +1,16 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.18.0/inter.css");
+/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
+/* purgecss end ignore */
 @tailwind utilities;
+
+@layer utilities {
+  .text-gradient {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 
 h1,
 h2,
@@ -26,16 +36,27 @@ p.bold {
   --color-primary-100: #dee3ea;
   --color-primary-200: #b2bdcd;
   --color-primary-300: #5d7290;
+  --color-primary-400: #4f617a;
+  --color-primary-500: #404f64;
   --color-primary-600: #323d4d;
   --color-primary-700: #242c37;
   --color-primary-800: #151a21;
   --color-primary-900: #0b0e11;
-  --color-secondary-washed-out: #879eed;
-  --color-secondary: #5575e7;
-  --color-accent-glow: rgba(253, 77, 77, 0.3);
-  --color-accent: #0095f6;
+  --color-accent: #0085ff;
   --color-accent-hover: #0081f6;
   --color-accent-disabled: #f5bfbf;
+  --color-secondary: #c645bb;
+  --color-secondary-mid: #9936e8;
+  --color-secondary-dark: #6222d8;
+  --color-green-100: #00ba34;
+  --color-green-200: #00952a;
+  --color-green-300: #00701e;
+  --color-green-400: #004a15;
+  --color-red-100: #e92c2c;
+  --color-red-200: #bb2224;
+  --color-red-300: #8c1913;
+  --color-red-400: #5d1111;
+  --color-gray-100: #f0f2f5;
   --screen-height-reduction: 0px;
 }
 
@@ -67,7 +88,7 @@ p.small {
 /* for firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-primary-700) rgba(0, 0, 0, 0);
+  scrollbar-color: var(--color-primary-200) rgba(0, 0, 0, 0);
 }
 
 /* for non-firefox */
@@ -82,7 +103,7 @@ p.small {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary-700);
+  background-color: var(--color-primary-100);
   border-radius: 5px;
 }
 

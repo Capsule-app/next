@@ -35,22 +35,40 @@ module.exports = {
         100: "var(--color-primary-100)",
         200: "var(--color-primary-200)",
         300: "var(--color-primary-300)",
+        400: "var(--color-primary-400)",
+        500: "var(--color-primary-500)",
         600: "var(--color-primary-600)",
         700: "var(--color-primary-700)",
         800: "var(--color-primary-800)",
         900: "var(--color-primary-900)",
-      },
-      secondary: {
-        DEFAULT: "var(--color-secondary)",
-        "washed-out": "var(--color-secondary-washed-out)",
       },
       accent: {
         DEFAULT: "var(--color-accent)",
         hover: "var(--color-accent-hover)",
         disabled: "var(--color-accent-disabled)",
       },
+      secondary: {
+        100: "var(--color-secondary)",
+        200: "var(--color-secondary-mid)",
+        300: "var(--color-secondary-dark)",
+      },
       black: "#000",
       white: "#fff",
+      green: {
+        100: "var(--color-green-100)",
+        200: "var(--color-green-200)",
+        300: "var(--color-green-300)",
+        400: "var(--color-green-400)",
+      },
+      red: {
+        100: "var(--color-red-100)",
+        200: "var(--color-red-200)",
+        300: "var(--color-red-300)",
+        400: "var(--color-red-400)",
+      },
+      gray: {
+        100: "var(--color-gray-100)",
+      },
     },
     spacing: {
       0: "0px",
@@ -78,6 +96,8 @@ module.exports = {
     },
     gridTemplateColumns: {
       xl: "360px 744px 360px",
+      lg: "60px 744px 360px",
+      md: "644px 360px",
     },
     extend: {},
   },

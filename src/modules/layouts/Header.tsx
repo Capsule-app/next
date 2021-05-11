@@ -1,19 +1,8 @@
 import React from "react";
-import { useScreenType } from "../../shared-hooks/useScreenType";
 
 export const Header: React.FC = () => {
-  const screenType = useScreenType();
-
-  let gridTemplateColumns = "360px 744px 360px";
-
   return (
-    <header
-      className="justify-center fixed z-10 bg-accent w-screen h-6.5"
-      style={{
-        display: screenType === "fullscreen" ? "flex" : "grid",
-        gridTemplateColumns,
-      }}
-    >
+    <header className="justify-center fixed z-10 bg-accent w-screen h-6.5">
       <section className="w-full flex items-center">
         <div className="w-6 h-6 bg-gradient-to-b from-primary-blue-100 to-primary-blue-300 rounded-full" />
       </section>
