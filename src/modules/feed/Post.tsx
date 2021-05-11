@@ -1,5 +1,4 @@
 import React from "react";
-import { PersonCircle } from "react-bootstrap-icons";
 
 interface Post {
   name: string;
@@ -17,21 +16,29 @@ interface Props {
 
 export const Post: React.FC<Props> = ({ post }) => {
   return (
-    <article>
-      <header className="flex space-x-1.5">
+    <article className="space-y-2">
+      <header className="flex space-x-2">
         {post.user_picture ? (
           <img
             src={post.user_picture}
             alt=""
-            width={48}
-            height={48}
-            className="flex-none"
+            className="w-6.5 h-6.5 rounded-full flex-none select-none"
           />
         ) : (
-          <PersonCircle className="text-" width={48} height={48} />
+          <img
+            src="/default-profile.png"
+            alt=""
+            className="w-6.5 h-6.5 rounded-full flex-none select-none"
+          />
         )}
-        <p className="font-bold">{post.name}</p>
+        <div>
+          <p className="font-bold">{post.name}</p>
+          <p className="text-primary-200 -mt-1">@{post.username}</p>
+        </div>
       </header>
+      <section>
+        <p className="break-words">{post.content}</p>
+      </section>
     </article>
   );
 };

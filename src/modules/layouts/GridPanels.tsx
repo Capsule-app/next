@@ -6,7 +6,7 @@ interface Props {
 
 export const FixedGridPanel: React.FC<Props> = ({ children }) => {
   return (
-    <div className={`flex flex-col flex-1 sticky top-0 h-screen`}>
+    <div className={`flex pt-5 flex-col flex-1 sticky top-0 h-screen`}>
       {children}
     </div>
   );

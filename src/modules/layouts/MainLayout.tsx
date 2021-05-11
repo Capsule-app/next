@@ -36,7 +36,9 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
         <FixedGridPanel>{rightPanel}</FixedGridPanel>
       </Media>
       <Media at="sm">
-        <MiddlePanel>{children}</MiddlePanel>
+        <MiddlePanel>
+          <div className="px-2">{children}</div>
+        </MiddlePanel>
       </Media>
     </main>
   );

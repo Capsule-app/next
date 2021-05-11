@@ -73,6 +73,9 @@ module.exports = {
         100: "var(--color-gray-100)",
       },
     },
+    screens: {
+      m: "1050px",
+    },
     spacing: {
       0: "0px",
       1: "5px",
@@ -102,7 +105,41 @@ module.exports = {
       lg: "60px 744px 360px",
       md: "644px 360px",
     },
-    extend: {},
+    extend: {
+      borderRadius: {
+        5: "5px",
+        8: "8px",
+        20: "20px",
+        40: "40px",
+      },
+      borderColor: {
+        "color-800": "var(--color-primary-800)",
+      },
+      outline: {
+        "no-chrome": "none",
+      },
+      transitionTimingFunction: {
+        "in-out-hard": "cubic-bezier(.77, 0, .175, 1)",
+      },
+      transitionDuration: {
+        400: "400ms",
+      },
+      keyframes: {
+        breathe: {
+          "0%, 100%": {
+            boxShadow: "0 0 20px 2px var(--color-primary-100-translucent)",
+            borderColor: "var(--color-primary-300)",
+          },
+          "50%": {
+            boxShadow: "0 0 20px 2px transparent",
+            borderColor: "var(--color-primary-700)",
+          },
+        },
+      },
+      animation: {
+        "breathe-slow": "breathe 5s infinite ease-in-out",
+      },
+    },
   },
   variants: {
     extend: {},
