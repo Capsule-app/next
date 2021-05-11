@@ -1,8 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.18.0/inter.css");
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
 
 @layer utilities {
