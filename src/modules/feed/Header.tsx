@@ -1,13 +1,12 @@
 import React from "react";
 import { Media } from "../../shared-hooks/useScreenSize";
-import { Search, Whatsapp } from "react-bootstrap-icons";
+import { Search } from "react-bootstrap-icons";
 import Link from "next/link";
-import Image from "next/image";
 
 export const Header: React.FC = () => {
   return (
     <>
-      <div className="flex sticky w-full flex-col z-10 pt-1 m:pt-5 top-0 bg-white">
+      <div className="border-b border-gray-100 m:border-b-0 flex sticky w-full flex-col z-10 pt-1 m:pt-5 top-0 bg-white">
         <div className="flex mb-1 m:mb-7 h-6 items-center">
           <div className="flex flex-1 justify-center w-full">
             <div className="relative w-full z-10 flex flex-col">
@@ -35,7 +34,7 @@ export const Header: React.FC = () => {
                       />
                     </a>
                   </Link>
-                  <Search className="w-4 h-4" />
+                  <Search className="w-4 h-4 text-primary-300" />
                 </div>
               </Media>
             </div>

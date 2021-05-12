@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Whatsapp } from "react-bootstrap-icons";
+import Image from "next/image";
+import { ChatFill } from "react-bootstrap-icons";
 
 export const HistoryBlock: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ export const HistoryBlock: React.FC = () => {
       <div className="flex mb-7 h-6 items-center">
         <Link href="/">
           <a>
-            <Whatsapp className="w-5.5 h-5.5" />
+            <Image src="/logo.png" alt="" width="40px" height="40px" />
           </a>
         </Link>
       </div>
