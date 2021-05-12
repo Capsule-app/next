@@ -11,10 +11,15 @@
   "dependencies": {
     "@artsy/fresnel": "^1.5.0",
     "axios": "^0.21.1",
+    "i18next": "^20.2.2",
+    "i18next-browser-languagedetector": "^6.1.1",
+    "i18next-http-backend": "^1.2.2",
+    "i18next-xhr-backend": "^3.2.2",
     "next": "10.2.0",
     "react": "17.0.2",
     "react-bootstrap-icons": "^1.4.1",
     "react-dom": "17.0.2",
+    "react-i18next": "^11.8.15",
     "react-query": "^3.16.0"
   },
   "devDependencies": {

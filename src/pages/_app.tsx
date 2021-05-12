@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import "../styles/globals.css";
 import { UserContextProvider } from "../shared-hooks/useUser";
 import { MediaContextProvider } from "../shared-hooks/useScreenSize";
+//import "../i18n";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
