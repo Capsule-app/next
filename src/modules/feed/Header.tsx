@@ -2,8 +2,11 @@ import React from "react";
 import { Media } from "../../shared-hooks/useScreenSize";
 import { Search } from "react-bootstrap-icons";
 import Link from "next/link";
+import { useTranslation } from "../../shared-hooks/useTranslation";
 
 export const Header: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="border-b border-gray-100 m:border-b-0 flex sticky w-full flex-col z-10 pt-1 m:pt-5 top-0 bg-white">
@@ -16,7 +19,7 @@ export const Header: React.FC = () => {
                     <Search />
                   </div>
                   <input
-                    placeholder="Search for people, topics, or posts"
+                    placeholder={t("search")}
                     autoComplete="off"
                     spellCheck="false"
                     className="w-full py-2 px-4 rounded-8 text-primary-800 placeholder-primary-200 focus:outline-none bg-gray-100 pl-0"

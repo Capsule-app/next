@@ -23,7 +23,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/pages/*"  
-, "next.config.js"  ],
+, "next.config.js", "src/shared-hooks/useTranslation.ts"  ],
   "exclude": [
     "node_modules"
   ]

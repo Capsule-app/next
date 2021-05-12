@@ -101,8 +101,8 @@ module.exports = {
       400: "400px",
     },
     gridTemplateColumns: {
-      xl: "360px 744px 360px",
-      lg: "60px 744px 360px",
+      xl: "250px 640px 350px",
+      lg: "60px 600px 360px",
       md: "644px 360px",
     },
     extend: {
