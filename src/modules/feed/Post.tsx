@@ -33,7 +33,7 @@ export const Post: React.FC<Props> = ({ post }) => {
         )}
         <div>
           <p className="font-bold">{post.name}</p>
-          <p className="text-primary-200 -mt-1">@{post.username}</p>
+          <p className="text-primary-300 -mt-1">@{post.username}</p>
         </div>
       </header>
       <section>

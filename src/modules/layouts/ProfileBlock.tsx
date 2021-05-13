@@ -22,21 +22,21 @@ export const ProfileBlock: React.FC = () => {
         </Link>
       </div>
       <div className="flex flex-1 flex-col overflow-y-auto space-y-5">
-        <section className="bg-gray-100 rounded-8 p-3 space-y-2">
+        <section className="bg-primary-100 rounded-8 p-3 space-y-2">
           <div className="flex items-center space-x-2">
             <img src={user.picture} alt="" className="w-8 h-8 rounded-full" />
             <div>
               <h4>{user.name}</h4>
-              <p className="-mt-1 font-medium text-primary-200">{`@${user.username}`}</p>
+              <p className="-mt-1 font-medium text-primary-300">{`@${user.username}`}</p>
             </div>
           </div>
           <p>{user.bio || t("users.noBio")}</p>
         </section>
-        <section className="bg-gray-100 rounded-8 pb-3">
+        <section className="bg-primary-100 rounded-8 pb-3">
           <header className="p-3">
             <h4 className="font-serif">{t("sections.topics")}</h4>
           </header>
-          <article className="border-t border-primary-100 p-3 cursor-pointer flex items-center space-x-2 w-full h-8 hover:bg-primary-100 transition duration-200 ease-in-out ">
+          <article className="border-t border-primary-200 p-3 cursor-pointer flex items-center space-x-2 w-full h-8 hover:bg-primary-200 transition duration-200 ease-in-out ">
             <div>
               <p className="text-sm text-gray-300">#cats</p>
               <p className="font-bold line-clamp-2 overflow-hidden">
@@ -46,7 +46,7 @@ export const ProfileBlock: React.FC = () => {
             </div>
             <img src="/cat.png" alt="" className="w-7.5 h-7.5 rounded-8" />
           </article>
-          <article className="border-t border-primary-100 p-3 cursor-pointer flex items-center space-x-2 w-full h-8 hover:bg-primary-100 transition duration-200 ease-in-out">
+          <article className="border-t border-primary-200 p-3 cursor-pointer flex items-center space-x-2 w-full h-8 hover:bg-primary-200 transition duration-200 ease-in-out">
             <div>
               <p className="text-sm text-gray-300">#webdevelopement</p>
               <p className="font-bold line-clamp-2 overflow-hidden">

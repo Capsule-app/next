@@ -34,7 +34,7 @@ export const LoginPage: React.FC = () => {
   return (
     <div className="grid w-full h-full grid-rows-fr">
       <div className="hideen m:flex" />
-      <div className="flex m-auto flex-col p-6 gap-6 bg-gray-100 m:rounded-8 x-10 m:w-400 w-full">
+      <div className="flex m-auto flex-col p-6 gap-6 bg-primary-100 m:rounded-8 x-10 m:w-400 w-full">
         <div className="flex flex-col gap-2">
           <span className="text-3xl text-black font-bold">Welcome</span>
           <div className="flex-wrap">
@@ -50,14 +50,14 @@ export const LoginPage: React.FC = () => {
             value={email}
             onChange={(e: any) => setEmail(e.target.value)}
             type="email"
-            className="flex outline-none py-2 px-3 rounded-lg bg-primary-100"
+            className="flex outline-none py-2 px-3 rounded-lg bg-primary-200"
           />
           <input
             placeholder="Password"
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}
             type="password"
-            className="flex outline-none py-2 px-3 rounded-lg bg-primary-100"
+            className="flex outline-none py-2 px-3 rounded-lg bg-primary-200"
           />
           <p className="font-semibold text-red-100">{error}</p>
           <button className="flex outline-none focus:ring-4 focus:ring-accent py-2 px-6 rounded-lg bg-accent flex items-center justify-center">

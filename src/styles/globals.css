@@ -41,11 +41,10 @@ p.bold {
   font-size: 15px;
 
   --color-button-text: #fff;
-  --color-primary: "#fff";
-  --color-primary-100: #dee3ea;
-  --color-primary-200: #b2bdcd;
-  --color-primary-300: #5d7290;
-  --color-primary-400: #4f617a;
+  --color-primary-100: #f0f2f5;
+  --color-primary-200: #dee3ea;
+  --color-primary-300: #9ca3af;
+  --color-primary-400: #6b7280;
   --color-primary-500: #404f64;
   --color-primary-600: #323d4d;
   --color-primary-700: #242c37;
@@ -65,7 +64,6 @@ p.bold {
   --color-red-200: #bb2224;
   --color-red-300: #8c1913;
   --color-red-400: #5d1111;
-  --color-gray-100: #f0f2f5;
   --screen-height-reduction: 0px;
 }
 
