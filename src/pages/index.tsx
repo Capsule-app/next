@@ -1,23 +1,20 @@
-import React, { useContext, useEffect } from "react";
-import { useQuery } from "react-query";
-import { HomePage } from "../modules/feed/HomePage";
-import { UserContext } from "../shared-hooks/useUser";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useTokenStore } from "../shared-hooks/useTokenStore";
+import { LoginPage } from "../modules/auth/LoginPage";
+
+const isClient = () => typeof window !== "undefined";
 
 const Home: React.FC = () => {
-  const cur = useContext(UserContext);
-
-  const { data, status } = useQuery("auth", async () => {
-    return await axios
-      .get(`${process.env.API_URL}user/2786d37e-e134-4930-94bf-a9ea913111ed`)
-      .then((res) => res.data);
-  });
+  const hasTokens = useTokenStore((s) => !!s.accessToken);
+  const { push, query } = useRouter();
 
   useEffect(() => {
-    cur.setUser({ ...data, isLoading: status === "loading" });
-  }, [data]);
+    if (isClient() && hasTokens)
+      push(query.next ? query.next.toString() : "/feed");
+  }, [hasTokens, push]);
 
-  return <HomePage />;
+  return <LoginPage />;
 };
 
 export default Home;

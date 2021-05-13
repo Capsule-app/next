@@ -7,4 +7,5 @@ export interface User {
   password: string;
   id: string;
   isLoading?: boolean;
+  error?: any;
 }

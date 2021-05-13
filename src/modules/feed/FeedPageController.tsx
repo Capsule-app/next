@@ -3,14 +3,10 @@ import { UserContext } from "../../shared-hooks/useUser";
 import { Header } from "./Header";
 import { Post } from "./Post";
 import axios from "axios";
-import { LanguageContext } from "../../lib/translations";
-import { setLanguage } from "../../shared-hooks/setLanguage";
 
-export const HomePageController: React.FC = () => {
+export const FeedPageController: React.FC = () => {
   const { user } = useContext(UserContext);
   const [posts, setPosts] = useState<any>([]);
-
-  const [, locale] = useContext(LanguageContext);
 
   const getPosts = async () => {
     try {
@@ -31,9 +27,6 @@ export const HomePageController: React.FC = () => {
     <>
       <Header />
       <div className="mt-2 m:mt-0 space-y-3">
-        <button onClick={() => setLanguage(locale, "es")}>
-          change language
-        </button>
         {posts &&
           posts.length > 0 &&
           posts.map((post: any) => <Post post={post} key={post.id} />)}

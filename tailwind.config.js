@@ -108,6 +108,9 @@ module.exports = {
       lg: "60px 600px 360px",
       md: "644px 360px",
     },
+    gridTemplateRows: {
+      fr: "1fr auto 1fr",
+    },
     extend: {
       borderRadius: {
         5: "5px",

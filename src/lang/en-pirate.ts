@@ -19,6 +19,8 @@ export const enPirate = {
     topics: "Stuff ye follow"
   },
   users: {
+    followers: "Scallywags",
+    following: "Hearties",
     noBio: "This matey has no bio.",
   },
 }

@@ -25,6 +25,8 @@ export const en = {
     topics: "Topics You Follow"
   },
   users: {
+    followers: "Followers",
+    following: "Following",
     noBio: "No bio yet."
   }
 }

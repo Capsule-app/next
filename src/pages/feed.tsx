@@ -1,5 +1,3 @@
-import React from "react";
+import { FeedPage } from "../modules/feed/FeedPage";
 
-export const Feed: React.FC = () => {
-  return <p>ghello</p>;
-};
+export default FeedPage;
