@@ -15,6 +15,9 @@ interface Props {
 }
 
 export const Post: React.FC<Props> = ({ post }) => {
+  const arr = post.content.split(" ");
+  const tags = arr.filter((t) => t.startsWith("#"));
+
   return (
     <article className="space-y-2">
       <header className="flex space-x-2">
@@ -37,7 +40,14 @@ export const Post: React.FC<Props> = ({ post }) => {
         </div>
       </header>
       <section>
-        <p className="break-words">{post.content}</p>
+        <p className="break-words">
+          {post.content.trim().replace(/#(\S+)/gi, "")}
+          {tags.map((tag) => (
+            <span className="text-gradient bg-gradient-to-r from-secondary-300 to-secondary-100">
+              {" " + tag}
+            </span>
+          ))}
+        </p>
       </section>
     </article>
   );

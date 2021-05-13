@@ -52,9 +52,16 @@ module.exports = {
         disabled: "var(--color-accent-disabled)",
       },
       secondary: {
-        100: "var(--color-secondary)",
-        200: "var(--color-secondary-mid)",
-        300: "var(--color-secondary-dark)",
+        100: {
+          DEFAULT: "var(--color-secondary-100)",
+          hover: "var(--color-secondary-100-hover)",
+        },
+        200: {
+          DEFAULT: "var(--color-secondary-200)",
+          hover: "var(--color-secondary-200-hover)",
+        },
+        300: "var(--color-secondary-300)",
+        ring: "var(--color-secondary-ring)",
       },
       black: "#000",
       white: "#fff",
@@ -107,6 +114,7 @@ module.exports = {
       xl: "250px 640px 350px",
       lg: "60px 600px 360px",
       md: "644px 360px",
+      3: "repeat(3, minmax(0, 1fr))",
     },
     gridTemplateRows: {
       fr: "1fr auto 1fr",

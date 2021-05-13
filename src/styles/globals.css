@@ -53,9 +53,12 @@ p.bold {
   --color-accent: #0085ff;
   --color-accent-hover: #0081f6;
   --color-accent-disabled: #f5bfbf;
-  --color-secondary: #c645bb;
-  --color-secondary-mid: #9936e8;
-  --color-secondary-dark: #6222d8;
+  --color-secondary-100: #c645bb;
+  --color-secondary-200: #9936e8;
+  --color-secondary-300: #6222d8;
+  --color-secondary-100-hover: #cc59c2;
+  --color-secondary-200-hover: #a54deb;
+  --color-secondary-ring: #d880d0;
   --color-green-100: #00ba34;
   --color-green-200: #00952a;
   --color-green-300: #00701e;

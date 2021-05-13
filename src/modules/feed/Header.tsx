@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../../shared-hooks/useUser";
 import { Media } from "../../shared-hooks/useScreenSize";
 import { Search } from "react-bootstrap-icons";
-import Link from "next/link";
 import { useTranslation } from "../../shared-hooks/useTranslation";
+import { CreatePostModal } from "../modals/CreatePost";
+import Link from "next/link";
+import axios from "axios";
 
 export const Header: React.FC = () => {
+  const { user } = useContext(UserContext);
   const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+  const [content, setContent] = useState("");
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    await axios.post(`${process.env.API_URL}post/`, {
+      user_id: user?.id,
+      content: content,
+      picture: "",
+      url: "",
+    });
+
+    onClose();
+  };
+
+  if (!user) return null;
 
   return (
     <>
+      <CreatePostModal
+        open={open}
+        onClose={onClose}
+        onSubmit={handleSubmit}
+        content={content}
+        setContent={setContent}
+      />
       <div className="border-b border-primary-100 m:border-b-0 flex sticky w-full flex-col z-10 pt-1 m:pt-5 top-0 bg-white">
         <div className="flex mb-1 m:mb-7 h-6 items-center">
           <div className="flex flex-1 justify-center w-full">
@@ -32,7 +64,7 @@ export const Header: React.FC = () => {
                     <Link href="/u/alex">
                       <a>
                         <img
-                          src="/me.png"
+                          src={user.picture}
                           alt=""
                           className="w-5.5 h-5.5 rounded-full flex-none select-none"
                         />
@@ -49,7 +81,10 @@ export const Header: React.FC = () => {
         <Media greaterThanOrEqual="md">
           <div className="flex justify-between items-center mb-5">
             <h4>Your Feed</h4>
-            <button className="font-serif text-sm text-white font-bold py-2 px-6 rounded-lg bg-accent">
+            <button
+              onClick={() => setOpen(true)}
+              className="focus outline-none focus:ring-4 focus:ring-secondary-ring font-serif text-sm text-white font-bold py-2 px-6 rounded-lg transition duration-200 ease-in-out bg-gradient-to-r from-secondary-200 to-secondary-100 hover:to-secondary-100-hover hover:from-secondary-200-hover"
+            >
               Create Post
             </button>
           </div>
