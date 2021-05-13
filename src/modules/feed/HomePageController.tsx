@@ -31,8 +31,8 @@ export const HomePageController: React.FC = () => {
     <>
       <Header />
       <div className="mt-2 m:mt-0 space-y-3">
-        <button onClick={() => setLanguage(locale, "en-pirate")}>
-          set pirate
+        <button onClick={() => setLanguage(locale, "es")}>
+          change language
         </button>
         {posts &&
           posts.length > 0 &&

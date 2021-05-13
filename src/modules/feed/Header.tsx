@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
                     <Search />
                   </div>
                   <input
-                    placeholder={t("search")}
+                    placeholder={t("header.search")}
                     autoComplete="off"
                     spellCheck="false"
                     className="w-full py-2 px-4 rounded-8 text-primary-800 placeholder-primary-200 focus:outline-none bg-gray-100 pl-0"

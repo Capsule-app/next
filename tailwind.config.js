@@ -16,6 +16,7 @@ module.exports = {
         "Arial",
         "sans-serif",
       ],
+      serif: ["Poppins", "ui-serif"],
     },
     fontSize: {
       tiny: "0.625rem",
@@ -71,6 +72,8 @@ module.exports = {
       },
       gray: {
         100: "var(--color-gray-100)",
+        200: "#9CA3AF",
+        300: "#6B7280",
       },
     },
     screens: {

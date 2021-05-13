@@ -1,6 +1,6 @@
 import React from "react";
 import { MainLayout } from "./MainLayout";
-import { HistoryBlock } from "./HistoryBlock";
+import { PeopleList } from "./PeopleList";
 import { ProfileBlock } from "./ProfileBlock";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 export const DefaultDesktopLayout: React.FC<Props> = ({ children }) => {
   return (
-    <MainLayout leftPanel={<HistoryBlock />} rightPanel={<ProfileBlock />}>
+    <MainLayout leftPanel={<PeopleList />} rightPanel={<ProfileBlock />}>
       {children}
     </MainLayout>
   );
