@@ -6,3 +6,10 @@
   <h1>Capsule</h1>
   <strong>Providing free speech with no limits 🐬</strong>
 </p>
+
+## How to contribute
+
+Clone the repository
+Run `yarn install`
+`yarn dev` will run the project in development mode
+Go to [localhost:3000](http://localhost:3000)
