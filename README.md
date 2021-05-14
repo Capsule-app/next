@@ -9,7 +9,7 @@
 
 ## How to contribute
 
-Clone the repository
-Run `yarn install`
-`yarn dev` will run the project in development mode
-Go to [localhost:3000](http://localhost:3000)
+- Clone the repository
+- Run `yarn install`
+- `yarn dev` will run the project in development mode
+- Go to [localhost:3000](http://localhost:3000)
