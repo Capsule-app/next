@@ -1,5 +1,4 @@
 import React from "react";
-import { Header } from "./Header";
 import { FixedGridPanel, MiddlePanel } from "./GridPanels";
 import { Media } from "../../shared-hooks/useScreenSize";
 
@@ -17,7 +16,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
   tabletSidebar = <div />,
 }) => {
   return (
-    <main className="flex flex-col items-center w-full">
+    <main className="flex flex-col items-center w-full scrollbar-thin scrollbar-thumb-primary-200">
       <Media
         greaterThanOrEqual="xl"
         className={`relative grid grid-cols-xl gap-5`}

@@ -4,7 +4,7 @@ interface Post {
   name: string;
   username: string;
   user_picture?: string;
-  content: string;
+  content: string | Array<string>;
   post_picture?: string;
   url?: string;
   id: string;
@@ -12,11 +12,17 @@ interface Post {
 
 interface Props {
   post: Post;
+  keyword?: string;
 }
 
-export const Post: React.FC<Props> = ({ post }) => {
-  const arr = post.content.split(" ");
-  const tags = arr.filter((t) => t.startsWith("#"));
+export const Post: React.FC<Props> = ({ post, keyword }) => {
+  var arr, tags;
+  if (typeof post.content === "string") {
+    arr = post.content.split(" ");
+    tags = arr.filter((t) => t.startsWith("#"));
+  } else {
+    tags = post.content.filter((t) => t.startsWith("#"));
+  }
 
   return (
     <article className="space-y-2">
@@ -40,14 +46,48 @@ export const Post: React.FC<Props> = ({ post }) => {
         </div>
       </header>
       <section>
-        <p className="break-words">
-          {post.content.trim().replace(/#(\S+)/gi, "")}
-          {tags.map((tag) => (
-            <span className="text-gradient bg-gradient-to-r from-secondary-300 to-secondary-100">
-              {" " + tag}
-            </span>
-          ))}
-        </p>
+        {typeof post.content === "string" ? (
+          <p className="break-words">
+            {post.content.trim().replace(/#(\S+)/gi, "")}
+            {tags &&
+              tags.map((tag, index) => (
+                <span
+                  className="text-gradient bg-gradient-to-r from-secondary-300 to-secondary-100"
+                  key={index}
+                >
+                  &nbsp;{tag}
+                </span>
+              ))}
+          </p>
+        ) : (
+          <div className="flex flex-wrap w-full">
+            {post.content.map((result: any, i: number) =>
+              result.includes(keyword) ? (
+                result.startsWith("#") ? (
+                  <p
+                    key={i}
+                    className="font-bold text-gradient bg-gradient-to-r from-secondary-300 to-secondary-100"
+                  >
+                    {result}&nbsp;
+                  </p>
+                ) : (
+                  <p className="font-bold" key={i}>
+                    {result}&nbsp;
+                  </p>
+                )
+              ) : result.startsWith("#") ? (
+                <p
+                  key={i}
+                  className="text-gradient bg-gradient-to-r from-secondary-300 to-secondary-100"
+                >
+                  {result}&nbsp;
+                </p>
+              ) : (
+                <p key={i}>{result}&nbsp;</p>
+              )
+            )}
+          </div>
+        )}
       </section>
     </article>
   );

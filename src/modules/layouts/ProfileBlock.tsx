@@ -7,7 +7,7 @@ export const ProfileBlock: React.FC = () => {
   const { user } = useContext(UserContext);
   const { t } = useTranslation();
 
-  if (!user || user.isLoading) return null;
+  if (!user || user.isLoading) return <p>loading</p>;
 
   return (
     <>

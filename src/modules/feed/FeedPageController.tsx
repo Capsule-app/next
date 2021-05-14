@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../shared-hooks/useUser";
-import { Header } from "./Header";
+import { Header } from "../layouts/Header";
 import { Post } from "./Post";
 import axios from "axios";
 
