@@ -3,5 +3,6 @@
 
 </p></a>
 <p align="center">
+  <h1>Capsule</h1>
   <strong>Providing free speech with no limits 🐬</strong>
 </p>
