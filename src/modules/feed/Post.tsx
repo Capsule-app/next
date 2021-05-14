@@ -51,12 +51,14 @@ export const Post: React.FC<Props> = ({ post, keyword }) => {
             {post.content.trim().replace(/#(\S+)/gi, "")}
             {tags &&
               tags.map((tag, index) => (
-                <span
-                  className="text-gradient bg-gradient-to-r from-secondary-300 to-secondary-100"
-                  key={index}
-                >
-                  &nbsp;{tag}
-                </span>
+                <a href={`/search/${tag.substr(1)}`}>
+                  <span
+                    className="text-gradient bg-gradient-to-r from-secondary-300 to-secondary-100"
+                    key={index}
+                  >
+                    &nbsp;{tag}
+                  </span>
+                </a>
               ))}
           </p>
         ) : (
